@@ -1,19 +1,20 @@
 package com.self_learning.q_calculator;
 
 public class StandardCalculator {
-    private int result;
-
     public static void getVersion() {
         System.out.println("Standard Calculator 1.0");
     }
 
-    public void add(int num1, int num2) {
+    private double result;
 
+    // Arithmatic oprts
+    public void add(int num1, int num2) {
         result = num1 + num2;
+        System.out.println("inside normal methods");
         printResult();
     }
 
-    public final void subtract(int num1, int num2) {
+    public void subtract(int num1, int num2) {
         result = num1 - num2;
         printResult();
     }
@@ -23,7 +24,7 @@ public class StandardCalculator {
         printResult();
     }
 
-    public final void divide(int num1, int num2) {
+    public void divide(int num1, int num2) {
         result = num1 / num2;
         printResult();
     }
@@ -48,6 +49,28 @@ public class StandardCalculator {
     // Print result
     public void printResult() {
         System.out.println("Standard Calculator Result:" + result);
+    }
+
+    // Overeload methods
+    public void add(double num1, double num2) {
+        result = num1 + num2;
+        System.out.println("inside overloaded methods");
+        printResult();
+    }
+
+    public void subtract(double num1, double num2) {
+        result = num1 - num2;
+        printResult();
+    }
+
+    public void multiply(double num1, double num2) {
+        result = num1 * num2;
+        printResult();
+    }
+
+    public void divide(double num1, double num2) {
+        result = num1 / num2;
+        printResult();
     }
 
 }

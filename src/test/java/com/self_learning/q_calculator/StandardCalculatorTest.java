@@ -30,19 +30,51 @@ public class StandardCalculatorTest {
     }
 
     @Test
-    @DisplayName("Test Division of Two Integers")
-    void testDivisionOperation() {
-        standardCalculator.divide(35, 2);
+    @DisplayName("Test Multiplication of Two Integers")
+    void testMultiplicationOperation() {
+        standardCalculator.multiply(3, 6);
         double actualResult = standardCalculator.getResult();
-        Assertions.assertEquals(17, actualResult);
+        Assertions.assertEquals(18, actualResult);
     }
 
     @Test
-    @DisplayName("Test Multiplication of Two Integers")
-    void testMultiplicationOperation() {
-        standardCalculator.multiply(14, 1);
+    @DisplayName("Test Division of Two Integers")
+    void testDivisionOperation() {
+        standardCalculator.divide(17, 3);
         double actualResult = standardCalculator.getResult();
-        Assertions.assertEquals(14, actualResult);
+        Assertions.assertEquals(5, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test Addition of Two Doubles")
+    void testAdditionOperationForDoubles() {
+        standardCalculator.add(1.0, 1.5);
+        double actualResult = standardCalculator.getResult();
+        Assertions.assertEquals(2.5, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test Substraction of Two Doubles")
+    void testSubtractionOperationForDoubles() {
+        standardCalculator.subtract(10.0, 20.5);
+        double actualResult = standardCalculator.getResult();
+        Assertions.assertEquals(-10.5, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test Multiplication of Two Doubles")
+    void testMultiplicationOperationForDoubles() {
+        standardCalculator.multiply(10.0, 20.5);
+        double actualResult = standardCalculator.getResult();
+        Assertions.assertEquals(205.0, actualResult);
+    }
+
+    @Test
+    @DisplayName("Test Division of Two Doubles")
+    void testDivisionOperationForDoubles() {
+        standardCalculator.divide(17.0, 3.0);
+        double actualResult = standardCalculator.getResult();
+        Assertions.assertEquals(5.666666666666667, actualResult);
     }
 
 }
