@@ -52,15 +52,25 @@ public class StandardCalculator {
     }
 
     // Overeload methods
-    public void add(double num1, double num2) {
+    public void add(double num1, double num2) throws ArithmeticException {
         result = num1 + num2;
         System.out.println("inside overloaded methods");
-        printResult();
+        if ((result == Double.MAX_VALUE) || (result == Double.POSITIVE_INFINITY)) {
+            throw new ArithmeticException("Double Overflow");
+        } else {
+            printResult();
+        }
     }
 
-    public void subtract(double num1, double num2) {
+    // Overeload methods
+    public void subtract(double num1, double num2) throws ArithmeticException {
         result = num1 - num2;
-        printResult();
+        System.out.println("inside overloaded methods");
+        if ((result == -Double.MAX_VALUE) || (result == Double.NEGATIVE_INFINITY)) {
+            throw new ArithmeticException("Double Overflow");
+        } else {
+            printResult();
+        }
     }
 
     public void multiply(double num1, double num2) {
