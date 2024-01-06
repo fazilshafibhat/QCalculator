@@ -5,16 +5,16 @@ public class StandardCalculator {
         System.out.println("Standard Calculator 1.0");
     }
 
-    private double result;
+    protected double result;
 
     // Arithmatic oprts
-    public void add(int num1, int num2) {
+    public final void add(int num1, int num2) {
         result = num1 + num2;
         System.out.println("inside normal methods");
         printResult();
     }
 
-    public void subtract(int num1, int num2) {
+    public final void subtract(int num1, int num2) {
         result = num1 - num2;
         printResult();
     }
@@ -24,7 +24,7 @@ public class StandardCalculator {
         printResult();
     }
 
-    public void divide(int num1, int num2) {
+    public final void divide(int num1, int num2) {
         result = num1 / num2;
         printResult();
     }
@@ -52,7 +52,7 @@ public class StandardCalculator {
     }
 
     // Overeload methods
-    public void add(double num1, double num2) throws ArithmeticException {
+    public final void add(double num1, double num2) throws ArithmeticException {
         result = num1 + num2;
         System.out.println("inside overloaded methods");
         if ((result == Double.MAX_VALUE) || (result == Double.POSITIVE_INFINITY)) {
@@ -63,7 +63,7 @@ public class StandardCalculator {
     }
 
     // Overeload methods
-    public void subtract(double num1, double num2) throws ArithmeticException {
+    public final void subtract(double num1, double num2) throws ArithmeticException {
         result = num1 - num2;
         System.out.println("inside overloaded methods");
         if ((result == -Double.MAX_VALUE) || (result == Double.NEGATIVE_INFINITY)) {
@@ -78,7 +78,7 @@ public class StandardCalculator {
         printResult();
     }
 
-    public void divide(double num1, double num2) {
+    public final void divide(double num1, double num2) {
         result = num1 / num2;
         printResult();
     }
