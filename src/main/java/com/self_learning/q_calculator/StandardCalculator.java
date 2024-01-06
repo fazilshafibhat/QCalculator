@@ -73,12 +73,21 @@ public class StandardCalculator {
         }
     }
 
-    public void multiply(double num1, double num2) {
+    public void multiply(double num1, double num2) throws ArithmeticException {
         result = num1 * num2;
-        printResult();
+        System.out.println("inside overloaded methods");
+        if ((result == Double.MAX_VALUE) || (result == Double.POSITIVE_INFINITY)
+                || (result == Double.NEGATIVE_INFINITY)) {
+            throw new ArithmeticException("Double Overflow");
+        } else {
+            printResult();
+        }
     }
 
-    public final void divide(double num1, double num2) {
+    public final void divide(double num1, double num2) throws ArithmeticException {
+        if (num2 == 0.0) {
+            throw new ArithmeticException("Divide By Zero");
+        }
         result = num1 / num2;
         printResult();
     }

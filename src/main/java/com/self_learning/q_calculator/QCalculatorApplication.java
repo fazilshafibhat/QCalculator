@@ -21,12 +21,12 @@ public class QCalculatorApplication {
 		try {
 			System.out.println(new QCalculatorApplication().getGreeting());
 			StandardCalculator calc = new StandardCalculator();
-			// calc.add(Double.MAX_VALUE, Double.MAX_VALUE);
+			calc.add(Double.MAX_VALUE, Double.MAX_VALUE);
 			calc.add(2, 3);
 			// calc.subtract(13, 11);
 			calc.subtract(-Double.MAX_VALUE, Double.MAX_VALUE);
 			calc.multiply(10.0, 20.5);
-			calc.divide(17.0, 3.0);
+			calc.divide(17.0, 3.8);
 			calc.getResult();
 		} catch (ArithmeticException e) {
 			System.out.print(e);
